@@ -66,9 +66,9 @@ common:
     url: https://discord.com/invite/payload
   - type: Pricing
     url: https://payloadcms.com/cloud-pricing
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://payloadcms.com/terms
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://payloadcms.com/privacy
 maintainers:
   - FN: Kin Lane
