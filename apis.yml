@@ -54,6 +54,8 @@ apis:
       - type: Pricing
         url: https://payloadcms.com/cloud-pricing
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/payload-cms
   - type: Website
     url: https://payloadcms.com/
   - type: Documentation
