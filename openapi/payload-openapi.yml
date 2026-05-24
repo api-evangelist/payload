@@ -1,0 +1,284 @@
+openapi: 3.1.0
+info:
+  title: Payload CMS REST API
+  description: >-
+    Payload is a TypeScript-first headless CMS and application framework that
+    auto-generates REST and GraphQL APIs from collection schemas. The REST API
+    exposes collections at /api/{collection-slug}, globals at
+    /api/globals/{global-slug}, auth operations at
+    /api/{user-collection}/login etc., and user preferences at
+    /api/payload-preferences/{key}. Authentication uses JWT tokens issued by the
+    login endpoint.
+  version: "3.0"
+  contact:
+    name: Payload
+    url: https://payloadcms.com/docs
+servers:
+  - url: https://example.com
+    description: Self-hosted Payload instance (replace with your deployment).
+security:
+  - bearerAuth: []
+tags:
+  - name: Collections
+  - name: Authentication
+  - name: Globals
+  - name: Preferences
+paths:
+  /api/{collection}:
+    parameters:
+      - name: collection
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Collection slug.
+    get:
+      tags: [Collections]
+      summary: Find documents in collection
+      operationId: findCollection
+      responses:
+        '200':
+          description: A paginated list of documents.
+    post:
+      tags: [Collections]
+      summary: Create a document
+      operationId: createDocument
+      responses:
+        '201':
+          description: Document created.
+    patch:
+      tags: [Collections]
+      summary: Bulk update documents matching a query
+      operationId: bulkUpdateDocuments
+      responses:
+        '200':
+          description: Documents updated.
+    delete:
+      tags: [Collections]
+      summary: Bulk delete documents matching a query
+      operationId: bulkDeleteDocuments
+      responses:
+        '200':
+          description: Documents deleted.
+  /api/{collection}/{id}:
+    parameters:
+      - name: collection
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Collections]
+      summary: Find document by id
+      operationId: findDocumentById
+      responses:
+        '200':
+          description: Document details.
+    patch:
+      tags: [Collections]
+      summary: Update document by id
+      operationId: updateDocumentById
+      responses:
+        '200':
+          description: Document updated.
+    delete:
+      tags: [Collections]
+      summary: Delete document by id
+      operationId: deleteDocumentById
+      responses:
+        '200':
+          description: Document deleted.
+  /api/{collection}/count:
+    parameters:
+      - name: collection
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Collections]
+      summary: Count documents matching a query
+      operationId: countDocuments
+      responses:
+        '200':
+          description: Count of matching documents.
+  /api/{userCollection}/login:
+    parameters:
+      - name: userCollection
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Auth-enabled collection slug (e.g. users).
+    post:
+      tags: [Authentication]
+      summary: Login and receive a JWT token
+      operationId: login
+      responses:
+        '200':
+          description: JWT token and user object.
+  /api/{userCollection}/logout:
+    parameters:
+      - name: userCollection
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      tags: [Authentication]
+      summary: Logout current session
+      operationId: logout
+      responses:
+        '200':
+          description: Logged out.
+  /api/{userCollection}/me:
+    parameters:
+      - name: userCollection
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Authentication]
+      summary: Get current authenticated user
+      operationId: me
+      responses:
+        '200':
+          description: Current user.
+  /api/{userCollection}/refresh-token:
+    parameters:
+      - name: userCollection
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      tags: [Authentication]
+      summary: Refresh the JWT token
+      operationId: refreshToken
+      responses:
+        '200':
+          description: New JWT issued.
+  /api/{userCollection}/verify/{token}:
+    parameters:
+      - name: userCollection
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: token
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      tags: [Authentication]
+      summary: Verify a newly-registered user via email token
+      operationId: verifyUser
+      responses:
+        '200':
+          description: User verified.
+  /api/{userCollection}/forgot-password:
+    parameters:
+      - name: userCollection
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      tags: [Authentication]
+      summary: Initiate forgot-password flow
+      operationId: forgotPassword
+      responses:
+        '200':
+          description: Email sent.
+  /api/{userCollection}/reset-password:
+    parameters:
+      - name: userCollection
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      tags: [Authentication]
+      summary: Reset password using a token
+      operationId: resetPassword
+      responses:
+        '200':
+          description: Password reset.
+  /api/{userCollection}/unlock:
+    parameters:
+      - name: userCollection
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      tags: [Authentication]
+      summary: Unlock a locked user account
+      operationId: unlockUser
+      responses:
+        '200':
+          description: User unlocked.
+  /api/globals/{global}:
+    parameters:
+      - name: global
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Global slug.
+    get:
+      tags: [Globals]
+      summary: Get a global
+      operationId: getGlobal
+      responses:
+        '200':
+          description: Global document.
+    post:
+      tags: [Globals]
+      summary: Update a global
+      operationId: updateGlobal
+      responses:
+        '200':
+          description: Global updated.
+  /api/payload-preferences/{key}:
+    parameters:
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Preferences]
+      summary: Get a user preference
+      operationId: getPreference
+      responses:
+        '200':
+          description: Preference value.
+    post:
+      tags: [Preferences]
+      summary: Create or update a user preference
+      operationId: upsertPreference
+      responses:
+        '200':
+          description: Preference saved.
+    delete:
+      tags: [Preferences]
+      summary: Delete a user preference
+      operationId: deletePreference
+      responses:
+        '200':
+          description: Preference deleted.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: JWT issued by the login endpoint. Send as `Authorization: JWT <token>` or via cookie.
