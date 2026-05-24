@@ -72,6 +72,8 @@ common:
     url: https://payloadcms.com/terms
   - type: PrivacyPolicy
     url: https://payloadcms.com/privacy
+  - type: LLMsTxt
+    url: https://payloadcms.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
