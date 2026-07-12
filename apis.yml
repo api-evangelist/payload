@@ -56,6 +56,8 @@ apis:
   - url: graphql/payload-graphql.md
     type: GraphQL
 common:
+- type: DomainSecurity
+  url: security/payload-domain-security.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/payload-cms
 - type: Website
