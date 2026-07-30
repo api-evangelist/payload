@@ -6,9 +6,21 @@ description: >-
   authentication, access control, file storage, and a Next.js-native admin
   UI used to build content-driven websites, applications, and digital products.
 type: Index
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 position: Consuming
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/payload.png
 tags:
 - Application Framework
 - CMS
