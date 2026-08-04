@@ -281,4 +281,4 @@ components:
       type: http
       scheme: bearer
       bearerFormat: JWT
-      description: JWT issued by the login endpoint. Send as `Authorization: JWT <token>` or via cookie.
+      description: "JWT issued by the login endpoint. Send as `Authorization: JWT <token>` or via cookie."
