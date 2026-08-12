@@ -37,10 +37,9 @@ apis:
 - aid: payload:payload
   name: Payload
   description: >-
-    Payload is a TypeScript-first headless CMS and application framework that
-    automatically generates REST, GraphQL, and Local APIs from collection
-    schemas, with built-in authentication, access control, and a Next.js
-    admin panel.
+    Payload is a TypeScript-first headless CMS and application framework that automatically generates
+    REST, GraphQL, and Local APIs from collection schemas, with built-in authentication, access control,
+    and a Next.js admin panel.
   humanURL: https://payloadcms.com/
   baseURL: https://payloadcms.com/api
   tags:
@@ -67,6 +66,46 @@ apis:
     url: https://payloadcms.com/cloud-pricing
   - url: graphql/payload-graphql.md
     type: GraphQL
+- aid: payload:payload-authentication-api
+  name: Payload Authentication API
+  description: The Authentication API from Payload — 8 operation(s) for authentication.
+  humanURL: https://payloadcms.com/
+  baseURL: https://payloadcms.com/api
+  tags:
+  - Authentication
+  properties:
+  - type: OpenAPI
+    url: openapi/payload-authentication-api-openapi.yml
+- aid: payload:payload-collections-api
+  name: Payload Collections API
+  description: The Collections API from Payload — 3 operation(s) for collections.
+  humanURL: https://payloadcms.com/
+  baseURL: https://payloadcms.com/api
+  tags:
+  - Collections
+  properties:
+  - type: OpenAPI
+    url: openapi/payload-collections-api-openapi.yml
+- aid: payload:payload-globals-api
+  name: Payload Globals API
+  description: The Globals API from Payload — 1 operation(s) for globals.
+  humanURL: https://payloadcms.com/
+  baseURL: https://payloadcms.com/api
+  tags:
+  - Globals
+  properties:
+  - type: OpenAPI
+    url: openapi/payload-globals-api-openapi.yml
+- aid: payload:payload-preferences-api
+  name: Payload Preferences API
+  description: The Preferences API from Payload — 1 operation(s) for preferences.
+  humanURL: https://payloadcms.com/
+  baseURL: https://payloadcms.com/api
+  tags:
+  - Preferences
+  properties:
+  - type: OpenAPI
+    url: openapi/payload-preferences-api-openapi.yml
 common:
 - type: DomainSecurity
   url: security/payload-domain-security.yml
