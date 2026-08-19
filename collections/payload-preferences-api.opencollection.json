@@ -1,0 +1,78 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Payload CMS REST Preferences API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Preferences",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a user preference",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://example.com/api/payload-preferences/:key",
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a user preference"
+        },
+        {
+          "info": {
+            "name": "Create or update a user preference",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://example.com/api/payload-preferences/:key",
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create or update a user preference"
+        },
+        {
+          "info": {
+            "name": "Delete a user preference",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://example.com/api/payload-preferences/:key",
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a user preference"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

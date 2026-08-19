@@ -1,0 +1,174 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Payload CMS REST Authentication API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Authentication",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Login and receive a JWT token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://example.com/api/:userCollection/login",
+            "params": [
+              {
+                "name": "userCollection",
+                "value": "",
+                "type": "path",
+                "description": "Auth-enabled collection slug (e.g. users)."
+              }
+            ]
+          },
+          "docs": "Login and receive a JWT token"
+        },
+        {
+          "info": {
+            "name": "Logout current session",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://example.com/api/:userCollection/logout",
+            "params": [
+              {
+                "name": "userCollection",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Logout current session"
+        },
+        {
+          "info": {
+            "name": "Get current authenticated user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://example.com/api/:userCollection/me",
+            "params": [
+              {
+                "name": "userCollection",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get current authenticated user"
+        },
+        {
+          "info": {
+            "name": "Refresh the JWT token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://example.com/api/:userCollection/refresh-token",
+            "params": [
+              {
+                "name": "userCollection",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Refresh the JWT token"
+        },
+        {
+          "info": {
+            "name": "Verify a newly-registered user via email token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://example.com/api/:userCollection/verify/:token",
+            "params": [
+              {
+                "name": "userCollection",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "token",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Verify a newly-registered user via email token"
+        },
+        {
+          "info": {
+            "name": "Initiate forgot-password flow",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://example.com/api/:userCollection/forgot-password",
+            "params": [
+              {
+                "name": "userCollection",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Initiate forgot-password flow"
+        },
+        {
+          "info": {
+            "name": "Reset password using a token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://example.com/api/:userCollection/reset-password",
+            "params": [
+              {
+                "name": "userCollection",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Reset password using a token"
+        },
+        {
+          "info": {
+            "name": "Unlock a locked user account",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://example.com/api/:userCollection/unlock",
+            "params": [
+              {
+                "name": "userCollection",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Unlock a locked user account"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

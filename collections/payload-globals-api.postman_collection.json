@@ -1,0 +1,211 @@
+{
+  "item": [
+    {
+      "id": "7ad265df-2c27-4607-9c63-1c9ea42309fa",
+      "name": "Globals",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ee7e393f-5582-47ba-92dd-118a94dc99df",
+          "name": "Get a global",
+          "request": {
+            "name": "Get a global",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "globals",
+                ":global"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "global",
+                  "description": "(Required) Global slug."
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bc03d5a7-459a-4ad8-ae17-53f3409e944e",
+              "name": "Global document.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "globals",
+                    ":global"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "global",
+                      "description": "(Required) Global slug."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1da06801-099c-4865-a66b-f306fac8d567",
+          "name": "Update a global",
+          "request": {
+            "name": "Update a global",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "globals",
+                ":global"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "global",
+                  "description": "(Required) Global slug."
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "31bfd0cf-7c50-4a86-807f-395fb8968944",
+              "name": "Global updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "globals",
+                    ":global"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "global",
+                      "description": "(Required) Global slug."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://example.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "28e3c191-9e87-4a54-a28a-b448c06c33aa",
+    "name": "Payload CMS REST Globals API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Payload is a TypeScript-first headless CMS and application framework that auto-generates REST and GraphQL APIs from collection schemas. The REST API exposes collections at /api/{collection-slug}, globals at /api/globals/{global-slug}, auth operations at /api/{user-collection}/login etc., and user preferences at /api/payload-preferences/{key}. Authentication uses JWT tokens issued by the login endpoint.\n\nContact Support:\n Name: Payload",
+      "type": "text/plain"
+    }
+  }
+}

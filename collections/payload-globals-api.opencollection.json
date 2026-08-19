@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Payload CMS REST Globals API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Globals",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a global",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://example.com/api/globals/:global",
+            "params": [
+              {
+                "name": "global",
+                "value": "",
+                "type": "path",
+                "description": "Global slug."
+              }
+            ]
+          },
+          "docs": "Get a global"
+        },
+        {
+          "info": {
+            "name": "Update a global",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://example.com/api/globals/:global",
+            "params": [
+              {
+                "name": "global",
+                "value": "",
+                "type": "path",
+                "description": "Global slug."
+              }
+            ]
+          },
+          "docs": "Update a global"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,187 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Payload CMS REST Collections API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Collections",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Find documents in collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://example.com/api/:collection",
+            "params": [
+              {
+                "name": "collection",
+                "value": "",
+                "type": "path",
+                "description": "Collection slug."
+              }
+            ]
+          },
+          "docs": "Find documents in collection"
+        },
+        {
+          "info": {
+            "name": "Create a document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://example.com/api/:collection",
+            "params": [
+              {
+                "name": "collection",
+                "value": "",
+                "type": "path",
+                "description": "Collection slug."
+              }
+            ]
+          },
+          "docs": "Create a document"
+        },
+        {
+          "info": {
+            "name": "Bulk update documents matching a query",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://example.com/api/:collection",
+            "params": [
+              {
+                "name": "collection",
+                "value": "",
+                "type": "path",
+                "description": "Collection slug."
+              }
+            ]
+          },
+          "docs": "Bulk update documents matching a query"
+        },
+        {
+          "info": {
+            "name": "Bulk delete documents matching a query",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://example.com/api/:collection",
+            "params": [
+              {
+                "name": "collection",
+                "value": "",
+                "type": "path",
+                "description": "Collection slug."
+              }
+            ]
+          },
+          "docs": "Bulk delete documents matching a query"
+        },
+        {
+          "info": {
+            "name": "Find document by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://example.com/api/:collection/:id",
+            "params": [
+              {
+                "name": "collection",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Find document by id"
+        },
+        {
+          "info": {
+            "name": "Update document by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://example.com/api/:collection/:id",
+            "params": [
+              {
+                "name": "collection",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update document by id"
+        },
+        {
+          "info": {
+            "name": "Delete document by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://example.com/api/:collection/:id",
+            "params": [
+              {
+                "name": "collection",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete document by id"
+        },
+        {
+          "info": {
+            "name": "Count documents matching a query",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://example.com/api/:collection/count",
+            "params": [
+              {
+                "name": "collection",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Count documents matching a query"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
