@@ -82,6 +82,8 @@ apis:
   humanURL: https://payloadcms.com/
   baseURL: https://payloadcms.com/api
   tags:
+  - Collection
+  tags_raw:
   - Collections
   properties:
   - type: OpenAPI
