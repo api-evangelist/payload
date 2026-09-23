@@ -1,10 +1,7 @@
 {
   "provider": "payload",
   "sources": [
-    "payload-authentication-api-openapi.yml",
-    "payload-collections-api-openapi.yml",
-    "payload-globals-api-openapi.yml",
-    "payload-preferences-api-openapi.yml"
+    "_original/payload-openapi.yml"
   ],
   "outputs": [
     "payload-authentication-api-openapi.yml",
@@ -16,11 +13,14 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "payload-authentication-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "payload-collections-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "payload-globals-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "payload-preferences-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "payload-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "payload-authentication-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "payload-collections-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "payload-globals-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "payload-preferences-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
